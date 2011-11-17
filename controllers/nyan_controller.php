@@ -1,5 +1,5 @@
 <?php
-/* 
+/**
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -14,7 +14,6 @@ class NyanController extends CcNyancatAppController {
 	public $uses = array();
 
 	public function index() {
-		
 	}
 
 }
