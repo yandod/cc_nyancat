@@ -3,5 +3,3 @@
 class CcNyancatAppModel extends AppModel {
 
 }
-
-?>

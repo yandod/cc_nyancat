@@ -3,5 +3,3 @@
 class CcNyancatAppController extends AppController {
 
 }
-
-?>

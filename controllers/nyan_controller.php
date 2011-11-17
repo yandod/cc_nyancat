@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 class NyanController extends CcNyancatAppController {
+
 /**
  * No models required
  *
  * @var array
  * @access public
  */
-	var $uses = array();
+	public $uses = array();
 
-	public function index(){
+	public function index() {
 		
 	}
+
 }
-?>
