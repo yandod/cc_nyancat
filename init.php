@@ -13,3 +13,17 @@ $menuContainer->addTopMenu(
 		'admin' => false
 	)
 );
+$menuContainer->addProjectMenu(
+  'nyancat',
+  array(
+          'plugin' => 'cc_nyancat',
+          'controller' => 'cc_nyancat_chart',
+          'action' => 'index',
+          'class' => '',
+          'caption' => 'Nyan Down Chart',
+          'params' => 'project_id',
+          '_allowed' => true
+  )
+);
+App::import('Core','Router');
+Router::connect('/projects/:project_id/nyanchart/:action', array('plugin' => 'cc_nyancat','controller' => 'cc_nyancat_chart'));
