@@ -14,7 +14,7 @@ class CcNyancatChartController extends CcNyancatAppController {
 	public $uses = array('Report');
 
 	public function index() {
-		$this->set('reports',$this->Report->findIssuesByAssignedTo($this->_project['Project']['id']));;
+		$this->set('reports',$this->Report->findIssuesByAssignedTo($this->_project['Project']['id']));
 	}
 
 }
