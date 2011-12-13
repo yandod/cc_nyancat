@@ -3,6 +3,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+$hookContainer = ClassRegistry::getObject('HookContainer');
+$hookContainer->registerElementHook('issues/relations', '../../plugins/cc_nyancat/views/elements/nyancat');
 $menuContainer = ClassRegistry::getObject('MenuContainer');
 $menuContainer->addTopMenu(
 	array(
