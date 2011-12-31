@@ -46,3 +46,9 @@ $hookContainer->registerElementHook(
 	'../../plugins/cc_nyancat/views/elements/nyancat', // additional template you want to inject.
 	false // it should be true when you want to inject before the target template.
 );
+
+/**
+ * register plugin information into container
+ */
+$pluginContainer = ClassRegistry::getObject('PluginContainer');
+$pluginContainer->installed('cc_nyancat','0.1');
