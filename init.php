@@ -51,4 +51,4 @@ $hookContainer->registerElementHook(
  * register plugin information into container
  */
 $pluginContainer = ClassRegistry::getObject('PluginContainer');
-$pluginContainer->installed('cc_nyancat','0.1');
+$pluginContainer->installed('cc_nyancat','0.2');
