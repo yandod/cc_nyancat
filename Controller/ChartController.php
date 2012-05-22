@@ -3,7 +3,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-class CcNyancatChartController extends CcNyancatAppController {
+class ChartController extends CcNyancatAppController {
 
 /**
  * No models required

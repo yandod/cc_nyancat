@@ -24,8 +24,8 @@ $menuContainer->addTopMenu(
 $menuContainer->addProjectMenu(
   'nyancat',
   array(
-          'plugin' => 'cc_nyancat',
-          'controller' => 'cc_nyancat_chart',
+          'plugin' => 'CcNyancat',
+          'controller' => 'Chart',
           'action' => 'index',
           'class' => '',
           'caption' => 'Nyan Down Chart',
@@ -34,8 +34,11 @@ $menuContainer->addProjectMenu(
   )
 );
 // make sure put new route setting which includes project_id
-App::import('Core','Router');
-Router::connect('/projects/:project_id/nyanchart/:action', array('plugin' => 'cc_nyancat','controller' => 'cc_nyancat_chart'));
+CakePlugin::loadAll(
+	array(
+    'CcNyancat' => array('routes' => true)
+	)
+);
 
 /**
  * Injecting specific template before or after a templete.
@@ -43,7 +46,7 @@ Router::connect('/projects/:project_id/nyanchart/:action', array('plugin' => 'cc
 $hookContainer = ClassRegistry::getObject('HookContainer');
 $hookContainer->registerElementHook(
 	'issues/relations', // target element name.
-	'../../plugins/cc_nyancat/views/elements/nyancat', // additional template you want to inject.
+	'../../Plugin/CcNyancat/View/Element/nyancat', // additional template you want to inject.
 	false // it should be true when you want to inject before the target template.
 );
 
@@ -51,4 +54,4 @@ $hookContainer->registerElementHook(
  * register plugin information into container
  */
 $pluginContainer = ClassRegistry::getObject('PluginContainer');
-$pluginContainer->installed('cc_nyancat','0.2');
+$pluginContainer->installed('cc_nyancat','0.3');

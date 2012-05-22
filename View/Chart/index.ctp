@@ -10,16 +10,16 @@ $reports_by_id = Set::combine($reports,'{n}.assigned_to_id','{n}');
   </tr>
 </thead>
 <tbody>
-<?php foreach ($mainProject['User'] as $val):?>
-  <tr class="<?php echo $candy->cycle('even','odd')?>">
-    <td align="center"><?php echo $candy->format_username($val)?></td>
+<?php foreach ($main_project['User'] as $val):?>
+  <tr class="<?php echo $this->Candy->cycle('even','odd')?>">
+    <td align="center"><?php echo $this->Candy->format_username($val)?></td>
 	<td align="center"><?php
 		$num = isset($reports_by_id[$val['id']]['total']) ? $reports_by_id[$val['id']]['total'] - $reports_by_id[$val['id']]['closed'] : 0;
 		echo $num;
 	?></td>
     <td align="left"><?php
 		for ($i = 0; $i < $num; $i++) {
-			echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
+			echo $this->Html->image('/cc_nyancat/img/poptartFINALTINY.gif');
 		}
 	?></td>
   </tr>
