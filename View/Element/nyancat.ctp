@@ -1,18 +1,6 @@
 <marquee direction="right"><br/>
 <?php
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
-echo $html->image('/cc_nyancat/img/poptartFINALTINY.gif');
+foreach(range(1,10) as $n ) {
+	echo $this->Html->image('/cc_nyancat/img/poptartFINALTINY.gif');
+}
 ?></marquee>
