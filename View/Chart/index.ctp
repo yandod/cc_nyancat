@@ -1,5 +1,17 @@
 <?php
-$reports_by_id = Set::combine($reports,'{n}.assigned_to_id','{n}');
+$reports_by_id = array(); //= Set::combine($reports,'{n}.assigned_to_id','{n}');
+foreach ($reports as $val) {
+	$user_id = $val['assigned_to_id'];
+	if ( !array_key_exists($user_id, $reports_by_id) ) {
+		$reports_by_id[$user_id] = 0;
+	}
+	
+	if ($val['closed']) {
+		continue;
+	}
+	$reports_by_id[$user_id] += $val['total'];
+	
+}
 ?>
 <table class="list">
 <thead>
@@ -14,7 +26,7 @@ $reports_by_id = Set::combine($reports,'{n}.assigned_to_id','{n}');
   <tr class="<?php echo $this->Candy->cycle('even','odd')?>">
     <td align="center"><?php echo $this->Candy->format_username($val)?></td>
 	<td align="center"><?php
-		$num = isset($reports_by_id[$val['id']]['total']) ? $reports_by_id[$val['id']]['total'] - $reports_by_id[$val['id']]['closed'] : 0;
+		$num = isset($reports_by_id[$val['id']]) ? $reports_by_id[$val['id']] : 0;
 		echo $num;
 	?></td>
     <td align="left"><?php
