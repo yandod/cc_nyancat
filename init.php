@@ -34,10 +34,9 @@ $menuContainer->addProjectMenu(
   )
 );
 // make sure put new route setting which includes project_id
-CakePlugin::loadAll(
-	array(
-    'CcNyancat' => array('routes' => true)
-	)
+CakePlugin::load(
+	basename(dirname(__FILE__)),
+	array('routes' => true)
 );
 
 /**
